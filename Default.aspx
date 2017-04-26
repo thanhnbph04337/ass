@@ -365,21 +365,154 @@
 
                 
 
+                <asp:ListView ID="ListView4" runat="server" DataKeyNames="MaKH" DataSourceID="SqlDataSource3" InsertItemPosition="LastItem">
+                    <AlternatingItemTemplate>
+                        <td runat="server" style="background-color: #FFFFFF;color: #284775;">MaKH:
+                            <asp:Label ID="MaKHLabel" runat="server" Text='<%# Eval("MaKH") %>' />
+                            <br />
+                            TenKH:
+                            <asp:Label ID="TenKHLabel" runat="server" Text='<%# Eval("TenKH") %>' />
+                            <br />
+                            Diachi:
+                            <asp:Label ID="DiachiLabel" runat="server" Text='<%# Eval("Diachi") %>' />
+                            <br />
+                            Email:
+                            <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
+                            <br />
+                            SDT:
+                            <asp:Label ID="SDTLabel" runat="server" Text='<%# Eval("SDT") %>' />
+                            <br />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        </td>
+                    </AlternatingItemTemplate>
+                    <EditItemTemplate>
+                        <td runat="server" style="background-color: #999999;">MaKH:
+                            <asp:Label ID="MaKHLabel1" runat="server" Text='<%# Eval("MaKH") %>' />
+                            <br />
+                            TenKH:
+                            <asp:TextBox ID="TenKHTextBox" runat="server" Text='<%# Bind("TenKH") %>' />
+                            <br />
+                            Diachi:
+                            <asp:TextBox ID="DiachiTextBox" runat="server" Text='<%# Bind("Diachi") %>' />
+                            <br />
+                            Email:
+                            <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
+                            <br />
+                            SDT:
+                            <asp:TextBox ID="SDTTextBox" runat="server" Text='<%# Bind("SDT") %>' />
+                            <br />
+                            <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                        </td>
+                    </EditItemTemplate>
+                    <EmptyDataTemplate>
+                        <table style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
+                            <tr>
+                                <td>No data was returned.</td>
+                            </tr>
+                        </table>
+                    </EmptyDataTemplate>
+                    <InsertItemTemplate>
+                        <td runat="server" style="">MaKH:
+                            <asp:TextBox ID="MaKHTextBox" runat="server" Text='<%# Bind("MaKH") %>' />
+                            <br />TenKH:
+                            <asp:TextBox ID="TenKHTextBox" runat="server" Text='<%# Bind("TenKH") %>' />
+                            <br />Diachi:
+                            <asp:TextBox ID="DiachiTextBox" runat="server" Text='<%# Bind("Diachi") %>' />
+                            <br />Email:
+                            <asp:TextBox ID="EmailTextBox" runat="server" Text='<%# Bind("Email") %>' />
+                            <br />SDT:
+                            <asp:TextBox ID="SDTTextBox" runat="server" Text='<%# Bind("SDT") %>' />
+                            <br />
+                            <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                        </td>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <td runat="server" style="background-color: #E0FFFF;color: #333333;">MaKH:
+                            <asp:Label ID="MaKHLabel" runat="server" Text='<%# Eval("MaKH") %>' />
+                            <br />
+                            TenKH:
+                            <asp:Label ID="TenKHLabel" runat="server" Text='<%# Eval("TenKH") %>' />
+                            <br />
+                            Diachi:
+                            <asp:Label ID="DiachiLabel" runat="server" Text='<%# Eval("Diachi") %>' />
+                            <br />
+                            Email:
+                            <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
+                            <br />
+                            SDT:
+                            <asp:Label ID="SDTLabel" runat="server" Text='<%# Eval("SDT") %>' />
+                            <br />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        </td>
+                    </ItemTemplate>
+                    <LayoutTemplate>
+                        <table runat="server" border="1" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                            <tr id="itemPlaceholderContainer" runat="server">
+                                <td id="itemPlaceholder" runat="server"></td>
+                            </tr>
+                        </table>
+                        <div style="text-align: center;background-color: #5D7B9D;font-family: Verdana, Arial, Helvetica, sans-serif;color: #FFFFFF">
+                            <asp:DataPager ID="DataPager1" runat="server">
+                                <Fields>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                    <asp:NumericPagerField />
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                </Fields>
+                            </asp:DataPager>
+                        </div>
+                    </LayoutTemplate>
+                    <SelectedItemTemplate>
+                        <td runat="server" style="background-color: #E2DED6;font-weight: bold;color: #333333;">MaKH:
+                            <asp:Label ID="MaKHLabel" runat="server" Text='<%# Eval("MaKH") %>' />
+                            <br />
+                            TenKH:
+                            <asp:Label ID="TenKHLabel" runat="server" Text='<%# Eval("TenKH") %>' />
+                            <br />
+                            Diachi:
+                            <asp:Label ID="DiachiLabel" runat="server" Text='<%# Eval("Diachi") %>' />
+                            <br />
+                            Email:
+                            <asp:Label ID="EmailLabel" runat="server" Text='<%# Eval("Email") %>' />
+                            <br />
+                            SDT:
+                            <asp:Label ID="SDTLabel" runat="server" Text='<%# Eval("SDT") %>' />
+                            <br />
+                            <asp:Button ID="EditButton" runat="server" CommandName="Edit" Text="Edit" />
+                            <asp:Button ID="DeleteButton" runat="server" CommandName="Delete" Text="Delete" />
+                        </td>
+                    </SelectedItemTemplate>
+                </asp:ListView>
+                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\NHOM2_CloudComputing.mdf;Integrated Security=True;Connect Timeout=30" DeleteCommand="DELETE FROM [KhachHang] WHERE [MaKH] = @MaKH" InsertCommand="INSERT INTO [KhachHang] ([MaKH], [TenKH], [Diachi], [Email], [SDT]) VALUES (@MaKH, @TenKH, @Diachi, @Email, @SDT)" ProviderName="System.Data.SqlClient" SelectCommand="SELECT [MaKH], [TenKH], [Diachi], [Email], [SDT] FROM [KhachHang]" UpdateCommand="UPDATE [KhachHang] SET [TenKH] = @TenKH, [Diachi] = @Diachi, [Email] = @Email, [SDT] = @SDT WHERE [MaKH] = @MaKH">
+                    <DeleteParameters>
+                        <asp:Parameter Name="MaKH" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="MaKH" Type="Int32" />
+                        <asp:Parameter Name="TenKH" Type="String" />
+                        <asp:Parameter Name="Diachi" Type="String" />
+                        <asp:Parameter Name="Email" Type="String" />
+                        <asp:Parameter Name="SDT" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="TenKH" Type="String" />
+                        <asp:Parameter Name="Diachi" Type="String" />
+                        <asp:Parameter Name="Email" Type="String" />
+                        <asp:Parameter Name="SDT" Type="String" />
+                        <asp:Parameter Name="MaKH" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+
+                
+
             </div>
         </div>
     </section>
             <!-- /Plans -->
             <br />
-            <asp:DetailsView ID="DetailsView2" runat="server" AllowPaging="True" AutoGenerateRows="False" DataKeyNames="MaKH" DataSourceID="SqlDataSource2" Height="50px" Width="125px">
-                <Fields>
-                    <asp:BoundField DataField="MaKH" HeaderText="MaKH" ReadOnly="True" SortExpression="MaKH" />
-                    <asp:BoundField DataField="TenKH" HeaderText="TenKH" SortExpression="TenKH" />
-                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                    <asp:BoundField DataField="Diachi" HeaderText="Diachi" SortExpression="Diachi" />
-                    <asp:BoundField DataField="SDT" HeaderText="SDT" SortExpression="SDT" />
-                    <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
-                </Fields>
-            </asp:DetailsView>
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [KhachHang] WHERE [MaKH] = @MaKH" InsertCommand="INSERT INTO [KhachHang] ([MaKH], [TenKH], [Email], [Diachi], [SDT]) VALUES (@MaKH, @TenKH, @Email, @Diachi, @SDT)" SelectCommand="SELECT [MaKH], [TenKH], [Email], [Diachi], [SDT] FROM [KhachHang]" UpdateCommand="UPDATE [KhachHang] SET [TenKH] = @TenKH, [Email] = @Email, [Diachi] = @Diachi, [SDT] = @SDT WHERE [MaKH] = @MaKH">
                 <DeleteParameters>
                     <asp:Parameter Name="MaKH" Type="Int32" />
